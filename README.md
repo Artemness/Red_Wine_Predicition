@@ -8,18 +8,25 @@ Utilized a Data set available from Kaggle.
 Rounded some of the variables to clean up the data.
 
 ## EDA:  
-In order to better understand some of the data, utilized some charts to visualize the data and distributions of the variables.
+<h3>In order to better understand some of the data, utilized some charts to visualize the data and distributions of the variables.</h3>  
 * Most of the variables followed a normal distribution with a few exceptions:  
     * Volatile Acidity
     * Citric Acid
     * Alcohol
 * To better understand the relationship between the different variables, we can take a look at the a heatmap:  
-   <img src= "/heatmap.png" height=540 width=540>
-* Checking the Box Plots for the different variables could help to give an understanding of the different outliers contained in the data:  
-    * Residual sugars stood out having quite a number of outliers in regards to quality:  
+<img src= "/heatmap.png" height=540 width=540>  
+<h3>From this we can see that a number of the variables have an impact on each other.</h3>  
+* pH and fixed acidity are closely related, which makes sense since changing the fixed acidity will directly effect the pH of the wine.  
+* volatile acidity and citric acid are closely related, again this makes sense since citric acid will directly effect the volatile acidity.  
+* citric acid and pH are also related, yet again this makes sense since the acid will directly effect pH.  
+* chlorides and pH are closely related, this is likely due to the fact there are a number of basic substances that have chlorides as one of the components in the molecular structure.  
+* density and alcohol are closely related also makes sense as the more alcohol reduces the density of the wine.  
+  <br>
+<h3>Checking the Box Plots for the different variables could help to give an understanding of the different outliers contained in the data:</h3>  
+   * Residual sugars stood out having quite a number of outliers in regards to quality:  
       ![](/sugarsboxplot.png "Sugars Box Plot")  
         * This is somewhat explained by the large variance in residual sugars: min-0.9 and max- 15.5  
-    * Chlorides also had a substantial amount of outliers:  
+   * Chlorides also had a substantial amount of outliers:  
       ![](/chloridesboxplot.png "Chlorides Box Plot")  
         * Again this could be explained by the large variance in chloride values: min- 0.012 and max- 0.611
         
