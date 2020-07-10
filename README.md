@@ -30,11 +30,11 @@ In order to better understand some of the data, utilized some charts to visualiz
 The Random Forest outperformed all the other models without tuning and correctly labeled 165 Bad wines as Bad, misrepreseted 46 Bad wines as Good and 2 Bad wine as Exceptional. It correctly attributed 131 Good wines in their respective category, mislabeled 51 Good wines as bad and 18 Good wines as Exceptional. The Exceptional Wines had 39 correctly categorized, 27 incorrectly categorized as Good and 1 categorized as Bad.
    <br>
 **Linear SVC Accuracy: 65.83**  
-<img src="/LinearSVCConfusionMatrix.png" width=426 height=320> 
+<img src="/LinearSVCConfusionMatrix.png" width=426 height=320>  
 The Linear SVC Model correctly labeled under half of the Bad wines with only 81 being correctly categorized. 101 of the Bad wines were miscategorized under Good and 31 under Exceptional. The model correctly attributed 121 Good wines to its respective category, with 40 being miscategorized under Bad and 39 under Exceptional. In addition the model correctly categorized 18 Exceptional wines as Exceptional, 48 incorrectly under Good and 1 under Bad.
 <br>
 **Logistic Regression Accuracy: 58.13**  
-   <img src="/LogisticRegressionConfusionMatrix.png" width=426 height=320>
+   <img src="/LogisticRegressionConfusionMatrix.png" width=426 height=320>  
 The Logistic Regression Classifier Model placed 160 Bad wines in their correct category, 52 Bad wines were missclassified as Good and 1 Bad wine was misclassified as Exceptional. The model correctly assigned 115 Good wines to their correct category with 4 being misclassified as Exceptional and 81 misclassified as Bad. The Exceptional wines were mostly missclassified as only 4 Exceptional wines were correctly categorized and 59 were classified under Good with 4 classified under Bad.
    <br>
 
