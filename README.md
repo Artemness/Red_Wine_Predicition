@@ -3,6 +3,8 @@ Predicting Red Wine Rating Given a Number of Characteristics
 
 ## Resources:  
 Red Wine Data: https://www.kaggle.com/uciml/red-wine-quality-cortez-et-al-2009  
+GridSearchCV: https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.GridSearchCV.html  
+Hypertuning: https://towardsdatascience.com/hyperparameter-tuning-the-random-forest-in-python-using-scikit-learn-28d2aa77dd74  
 
 ## Data Collection:  
 Utilized a Data set available from kaggle.
