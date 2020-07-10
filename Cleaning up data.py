@@ -10,4 +10,4 @@ df['density'] = df['density'].apply(lambda x: round(x,4))
 #Checking Data to see for missing values:
 print(df.info())
 
-df.to_csv('wineclean.csv')
+df.to_csv('wineclean.csv', index= False)
