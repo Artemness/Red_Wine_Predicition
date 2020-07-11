@@ -49,7 +49,7 @@ The Decision Tree Model placed 138 Bad wines in their correct category, 68 Bad w
  
  ## Optimization:  
  Ran an optimization function: GridsearchCV to optimize the Random Forest model.
- <img src="/BestForestConfusionMatrix.png" width=426 height=320>
+ <img src="/BestForestConfusionMatrix.png" width=426 height=320>  
  This increased the accuracy up to to 70.42%. Following this, utilized pickle to pack the model in order to productionalize the model.
  
  ## Productionalizing:
