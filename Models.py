@@ -70,7 +70,7 @@ gbc = GradientBoostingClassifier(random_state=42)
 gbc.fit(X_train, y_train)
 gbc_predict = gbc.predict(X_test)
 
-#Evaluate the X test set for Decision Tree Classifier:
+#Evaluate the X test set for Gradient Boosting:
 gbc_matrix = confusion_matrix(y_test, gbc_predict)
 gbc_acc = accuracy_score(y_test, gbc_predict)
 print('Gradient Boosting Classifier Accuracy:')
@@ -80,7 +80,7 @@ ax.remove()
 ax= plt.subplot()
 ax2 = sns.heatmap(gbc_matrix, annot=True, fmt='g', ax = ax);
 ax2.set_xlabel('Predicted labels');ax.set_ylabel('True labels');
-ax2.set_title('Confusion Matrix for Decision Tree Classifier');
+ax2.set_title('Confusion Matrix for Gradient Boosting');
 ax2.xaxis.set_ticklabels(['Bad', 'Good','Exceptional']); ax.yaxis.set_ticklabels(['Bad', 'Good','Exceptional']);
 fig2 = ax2.get_figure()
 fig2.savefig('GradientBoostingClassifierConfusionMatrix.png')
@@ -120,7 +120,7 @@ ax.remove()
 ax= plt.subplot()
 ax4 = sns.heatmap(ada_matrix, annot=True, fmt='g', ax = ax);
 ax4.set_xlabel('Predicted labels');ax.set_ylabel('True labels');
-ax4.set_title('Confusion Matrix for Decision Tree Classifier');
+ax4.set_title('Confusion Matrix for AdaBoost');
 ax4.xaxis.set_ticklabels(['Bad', 'Good','Exceptional']); ax.yaxis.set_ticklabels(['Bad', 'Good','Exceptional']);
 fig4 = ax4.get_figure()
 fig4.savefig('AdaBoostConfusionMatrix.png')
@@ -140,7 +140,7 @@ ax.remove()
 ax= plt.subplot()
 ax5 = sns.heatmap(nb_matrix, annot=True, fmt='g', ax = ax);
 ax5.set_xlabel('Predicted labels');ax.set_ylabel('True labels');
-ax5.set_title('Confusion Matrix for Decision Tree Classifier');
+ax5.set_title('Confusion Matrix for NaiveBayes');
 ax5.xaxis.set_ticklabels(['Bad', 'Good','Exceptional']); ax.yaxis.set_ticklabels(['Bad', 'Good','Exceptional']);
 fig5 = ax5.get_figure()
 fig5.savefig('NaiveBayesConfusionMatrix.png')
@@ -181,7 +181,7 @@ ax.remove()
 ax= plt.subplot()
 ax7 = sns.heatmap(svc_matrix, annot=True, fmt='g', ax = ax);
 ax7.set_xlabel('Predicted labels');ax.set_ylabel('True labels');
-ax7.set_title('Confusion Matrix for Decision Tree Classifier');
+ax7.set_title('Confusion Matrix for SVC');
 ax7.xaxis.set_ticklabels(['Bad', 'Good','Exceptional']); ax.yaxis.set_ticklabels(['Bad', 'Good','Exceptional']);
 fig7 = ax7.get_figure()
 fig7.savefig('SVCConfusionMatrix.png')
@@ -202,17 +202,17 @@ ax= plt.subplot()
 ax8 = sns.heatmap(svcl_matrix, annot=True, fmt='g', ax = ax); #annot=True to annotate cells
 # labels, title and ticks
 ax8.set_xlabel('Predicted labels');ax.set_ylabel('True labels');
-ax8.set_title('Confusion Matrix for Decision Tree Classifier');
+ax8.set_title('Confusion Matrix for Linear SVC');
 ax8.xaxis.set_ticklabels(['Bad', 'Good','Exceptional']); ax.yaxis.set_ticklabels(['Bad', 'Good','Exceptional']);
 fig8 = ax8.get_figure()
 fig8.savefig('LinearSVCConfusionMatrix.png')
 
-#Create NuSVC and Train:
+#Create K Neighbors and Train:
 kn = KNeighborsClassifier()
 kn.fit(X_train, y_train)
 kn_predict = kn.predict(X_test)
 
-#Evaluate the X test set for SVC:
+#Evaluate the X test set for K Neighbors:
 kn_matrix = confusion_matrix(y_test, kn_predict)
 kn_acc = accuracy_score(y_test, kn_predict)
 print('K Neighbors Accuracy:')
@@ -222,7 +222,7 @@ ax.remove()
 ax= plt.subplot()
 ax9 = sns.heatmap(kn_matrix, annot=True, fmt='g', ax = ax);
 ax9.set_xlabel('Predicted labels');ax.set_ylabel('True labels');
-ax9.set_title('Confusion Matrix for Decision Tree Classifier');
+ax9.set_title('Confusion Matrix for K Neighbors');
 ax9.xaxis.set_ticklabels(['Bad', 'Good','Exceptional']); ax.yaxis.set_ticklabels(['Bad', 'Good','Exceptional']);
 fig9 = ax9.get_figure()
 fig9.savefig('KNeighborsConfusionMatrix.png')
@@ -280,7 +280,7 @@ ax.remove()
 ax= plt.subplot()
 ax10 = sns.heatmap(rfbest_matrix, annot=True, fmt='g', ax = ax);
 ax10.set_xlabel('Predicted labels');ax.set_ylabel('True labels');
-ax10.set_title('Confusion Matrix for Decision Tree Classifier');
+ax10.set_title('Confusion Matrix for Best Random Forest');
 ax10.xaxis.set_ticklabels(['Bad', 'Good','Exceptional']); ax.yaxis.set_ticklabels(['Bad', 'Good','Exceptional']);
 fig10 = ax10.get_figure()
 fig10.savefig('BestForestConfusionMatrix.png')
