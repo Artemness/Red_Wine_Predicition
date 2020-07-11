@@ -46,8 +46,20 @@ The Linear SVC Model correctly labeled under half of the Bad wines with only 81 
    <img src="/DecisionTreeClassifierConfusionMatrix.png" width=426 height=320>  
 The Decision Tree Model placed 138 Bad wines in their correct category, 68 Bad wines were missclassified as Good and 7 Bad wine was misclassified as Exceptional. The model correctly assigned 123 Good wines to their correct category with 30 being misclassified as Exceptional and 47 misclassified as Bad. The Exceptional wines were mostly classified correctly with 38 Exceptional wines correctly categorized and 21 were misclassified under Good and 8 misclassified under Bad.
  <br>
+ 
+ ## Optimization:  
+ Ran an optimization function: GridsearchCV to optimize the Random Forest model.
+ <img src="/BestForestConfusionMatrix.png" width=426 height=320>
+ This increased the accuracy up to to 70.42%. Following this, utilized pickle to pack the model in order to productionalize the model.
+ 
+ ## Productionalizing:
+ Established a Website which allows a user to input the characteristics of the wine and utilizes the optimized Random Forest Model to create a prediction for the input.
+
+ <img src="/DjangoInterface.png" width=478 height=305>
+ <img src="/DjangoInterfaceRating.png" width=478 height=305>
 
 ## Resources:  
 Red Wine Data: https://www.kaggle.com/uciml/red-wine-quality-cortez-et-al-2009  
 GridSearchCV: https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.GridSearchCV.html  
 Hypertuning: https://towardsdatascience.com/hyperparameter-tuning-the-random-forest-in-python-using-scikit-learn-28d2aa77dd74  
+Django Tutorial: https://www.youtube.com/watch?v=e-ZJekJXGfI&t=1458s  
