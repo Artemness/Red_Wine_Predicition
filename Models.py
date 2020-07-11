@@ -286,6 +286,6 @@ fig10 = ax10.get_figure()
 fig10.savefig('BestForestConfusionMatrix.png')
 
 
-import pickle
-pickl ={'model': RFBestEst}
-pickle.dump( pickl, open( 'RFBestModel' + ".p", "wb"))
+from sklearn.externals import joblib
+filename = 'RandomForestOptimized.pkl'
+joblib.dump(RFBestEst, filename)
