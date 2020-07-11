@@ -15,9 +15,9 @@ df = pd.read_csv('wineclean.csv')
 #Create smaller subsets for quality:
 rating = []
 for i in df['quality']:
-    if i >= 1 and i < 4:
+    if i >= 1 and i < 6:
         rating.append('0')
-    elif i >= 4 and i < 7:
+    elif i >= 6 and i < 7:
         rating.append('1')
     elif i >= 7:
         rating.append('2')
@@ -228,11 +228,10 @@ fig9 = ax9.get_figure()
 fig9.savefig('KNeighborsConfusionMatrix.png')
 
 ''' Top 3 Results are:
-Random Forest Accuracy: 88.33
-Logistic Regression Accuracy:86.46
-Linear SVC Accuracy: 86.25
-
-Lets run optimization functions for each of these.
+Random Forest Accuracy: 69.79
+Gradient Boosting Classifier: 65.83
+Logistic Regression Classifier: 58.13
+Lets run optimization functions for RF.
 '''
 from sklearn.model_selection import GridSearchCV
 
@@ -243,10 +242,10 @@ RFparams = {'bootstrap': [True, False],
  'min_samples_leaf': [1, 2, 4],
  'min_samples_split': [2, 5, 10],
  'n_estimators': [200, 400, 600, 800, 1000, 1200, 1400, 1600, 1800, 2000, 2400, 2800, 3200, 3600, 4000]}
-GSRF = GridSearchCV(rf, RFparams, cv=3, n_jobs=-1)
-GSRF.fit(X_train, y_train)
-RFmaxscore = GSRF.best_score_
-RFBestEst = RandomForestClassifier(bootstrap=False, ccp_alpha=0.0, class_weight=None,
+#GSRF = GridSearchCV(rf, RFparams, cv=3, n_jobs=-1)
+#GSRF.fit(X_train, y_train)
+#RFmaxscore = GSRF.best_score_
+'''RFBestEst = RandomForestClassifier(bootstrap=False, ccp_alpha=0.0, class_weight=None,
                        criterion='gini', max_depth=20, max_features='auto',
                        max_leaf_nodes=None, max_samples=None,
                        min_impurity_decrease=0.0, min_impurity_split=None,
@@ -254,10 +253,18 @@ RFBestEst = RandomForestClassifier(bootstrap=False, ccp_alpha=0.0, class_weight=
                        min_weight_fraction_leaf=0.0, n_estimators=2000,
                        n_jobs=None, oob_score=False, random_state=42, verbose=0,
                        warm_start=False)
+'''
 
-RFBestEst = GSRF.best_estimator_
+RFBestEst = RandomForestClassifier(bootstrap=True, ccp_alpha=0.0, class_weight=None,
+                       criterion='gini', max_depth=20, max_features='auto',
+                       max_leaf_nodes=None, max_samples=None,
+                       min_impurity_decrease=0.0, min_impurity_split=None,
+                       min_samples_leaf=1, min_samples_split=2,
+                       min_weight_fraction_leaf=0.0, n_estimators=1000,
+                       n_jobs=None, oob_score=False, random_state=42, verbose=0,
+                       warm_start=False)
 
-print(RFmaxscore)
+#print(RFmaxscore)
 print(RFBestEst)
 
 RFBestEst.fit(X_train, y_train)
@@ -277,3 +284,8 @@ ax10.set_title('Confusion Matrix for Decision Tree Classifier');
 ax10.xaxis.set_ticklabels(['Bad', 'Good','Exceptional']); ax.yaxis.set_ticklabels(['Bad', 'Good','Exceptional']);
 fig10 = ax10.get_figure()
 fig10.savefig('BestForestConfusionMatrix.png')
+
+
+import pickle
+pickl ={'model': RFBestEst}
+pickle.dump( pickl, open( 'RFBestModel' + ".p", "wb"))
