@@ -151,7 +151,7 @@ rf.fit(X_train, y_train)
 rf_predict = rf.predict(X_test)
 
 #Evaluate Random Forest:
-#Evaluate the X test set for Decision Tree Classifier:
+#Evaluate the X test set for Random Forest Classifier:
 rf_matrix = confusion_matrix(y_test, rf_predict)
 rf_acc = accuracy_score(y_test, rf_predict)
 print('Random Forest Accuracy:')
@@ -161,7 +161,7 @@ ax.remove()
 ax= plt.subplot()
 ax6 = sns.heatmap(rf_matrix, annot=True, fmt='g', ax = ax);
 ax6.set_xlabel('Predicted labels');ax.set_ylabel('True labels');
-ax6.set_title('Confusion Matrix for Decision Tree Classifier');
+ax6.set_title('Confusion Matrix for Random Forest Classifier');
 ax6.xaxis.set_ticklabels(['Bad', 'Good','Exceptional']); ax.yaxis.set_ticklabels(['Bad', 'Good','Exceptional']);
 fig6 = ax6.get_figure()
 fig6.savefig('RandomForestConfusionMatrix.png')
