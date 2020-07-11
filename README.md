@@ -55,8 +55,8 @@ The Decision Tree Model placed 138 Bad wines in their correct category, 68 Bad w
  ## Productionalizing:
  Established a Website which allows a user to input the characteristics of the wine and utilizes the optimized Random Forest Model to create a prediction for the input.
 
- <img src="/DjangoInterface.png" width=478 height=305>
- <img src="/DjangoInterfaceRating.png" width=478 height=305>
+ <img src="/DjangoInterface.png" width=717 height=457.5>
+ <img src="/DjangoInterfaceRating.png" width=717 height=457.5>
 
 ## Resources:  
 Red Wine Data: https://www.kaggle.com/uciml/red-wine-quality-cortez-et-al-2009  
